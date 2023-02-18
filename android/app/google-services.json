@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "486245676112",
+    "project_id": "douyin-flutter",
+    "storage_bucket": "douyin-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486245676112:android:5ce1053cd08ba874890d55",
+        "android_client_info": {
+          "package_name": "com.example.douyin_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "CLIENT_ID",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "API_KEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "CLIENT_ID",
+              "client_type": 3
+            },
+            {
+              "client_id": "CLIENT_ID",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.douyinFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
