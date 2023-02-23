@@ -1,6 +1,7 @@
-import 'package:douyin_flutter/constants.dart';
-import 'package:douyin_flutter/views/widgets/text_input_field.dart';
 import 'package:flutter/material.dart';
+import '../../../constants.dart';
+import '../../widgets/text_input_field.dart';
+import 'signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Flutter 抖音',
+              'DouYin 抖音',
               style: TextStyle(
                 fontSize: 35,
                 color: buttonColor,
@@ -31,7 +32,9 @@ class LoginScreen extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            const SizedBox(height: 25),
+            const SizedBox(
+              height: 25,
+            ),
             Container(
               width: MediaQuery.of(context).size.width,
               margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -41,7 +44,9 @@ class LoginScreen extends StatelessWidget {
                 icon: Icons.email,
               ),
             ),
-            const SizedBox(height: 25),
+            const SizedBox(
+              height: 25,
+            ),
             Container(
               width: MediaQuery.of(context).size.width,
               margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -52,47 +57,59 @@ class LoginScreen extends StatelessWidget {
                 isObscure: true,
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(
+              height: 30,
+            ),
             Container(
               width: MediaQuery.of(context).size.width - 40,
               height: 50,
               decoration: BoxDecoration(
                 color: buttonColor,
-                borderRadius: const BorderRadius.all(Radius.circular(5)),
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(5),
+                ),
               ),
               child: InkWell(
-                onTap: () {
-                  print('user login');
-                },
+                onTap: () => authController.loginUser(
+                  _emailController.text,
+                  _passwordController.text,
+                ),
                 child: const Center(
                   child: Text(
                     'Login',
                     style: TextStyle(
-                      fontWeight: FontWeight.w700,
                       fontSize: 20,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(
+              height: 15,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Don\'t have an account?',
-                    style: TextStyle(fontSize: 20)),
-                const SizedBox(width: 5),
+                const Text(
+                  'Don\'t have an account? ',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
                 InkWell(
-                  onTap: () {
-                    print('Register user');
-                  },
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => SignupScreen(),
+                    ),
+                  ),
                   child: Text(
                     'Register',
                     style: TextStyle(fontSize: 20, color: buttonColor),
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

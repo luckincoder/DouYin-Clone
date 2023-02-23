@@ -12,7 +12,7 @@ class User {
     required this.uid,
   });
 
-  Map<String, dynamic> tpJson() => {
+  Map<String, dynamic> toJson() => {
         "name": name,
         "profilePhoto": profilePhoto,
         "email": email,
